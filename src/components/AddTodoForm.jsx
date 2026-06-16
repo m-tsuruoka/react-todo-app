@@ -14,7 +14,7 @@ function AddTodoForm({ inputText, onInputChange, onAddTodo }) {
         onChange={(e) => onInputChange(e.target.value)} // 💡 自分で実装の部分：親のStateを更新する
         placeholder="Todoを入力..."
       />
-      <button type="submit">追加</button>
+      <button className="form-btn" type="submit">追加</button>
       <p></p>
     </form>
   );

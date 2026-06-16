@@ -1,3 +1,4 @@
+import "../App.css";
 function TodoItem({ todo, onToggle, onDelete }) {
   return (
     <li className="todo-item">
@@ -6,8 +7,8 @@ function TodoItem({ todo, onToggle, onDelete }) {
         checked={todo.completed}
         onChange={() => onToggle(todo.id)}
       />
-      <span className="todo-text">{todo.text}</span>
-      <button onClick={() => onDelete(todo.id)}>削除</button>
+      <span className={todo.completed ? "todo-text completed" : "todo-text"}>{todo.text}</span>
+      <button className="delete-btn" onClick={() => onDelete(todo.id)}>削除</button>
     </li>
   );
 }
