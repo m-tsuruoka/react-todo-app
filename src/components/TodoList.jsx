@@ -1,12 +1,9 @@
-
-function TodoList({ todos, onDelete}) {
+import TodoItem from "./TodoItem";
+function TodoList({ todos ,onDelete}) {
   return (
     <ul className="todo-list">
       {todos.map((todo) => (
-        <li key={todo.id}>
-          {todo.text}
-          <button onClick={() => onDelete(todo.id)}>削除</button>
-        </li>
+        <TodoItem key={todo.id} todo={todo} onDelete={onDelete}/>
       ))}
     </ul>
   );
