@@ -1,0 +1,97 @@
+.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.form-btn{
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.delete-btn{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+
+.filter-btn {
+  padding: 4px 12px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background: white;
+}
+
+.filter-btn.active {
+  background: #0066cc;
+  color: white;
+  border-color: #0066cc;
+}
+
+/* リセット */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f5f5f5;
+}
+
+/* アプリ全体のコンテナ */
+.app {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 入力フォーム */
+.add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-form input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Todoリスト */
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 14px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}

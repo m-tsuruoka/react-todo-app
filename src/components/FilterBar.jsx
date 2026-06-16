@@ -9,12 +9,12 @@ function FilterBar({ currentFilter, onFilterChange, activeCount }) {
     <div>
       {FILTERS.map(({ value, label }) => (
         <button
-          key={value}
-          onClick={() => onFilterChange(value)}
-          className={currentFilter === value ? "filter-btn active" : "filter-btn"}
-        >
-          {label}
-        </button>
+  key={value}
+  onClick={() => onFilterChange(value)}
+  className={currentFilter === value ? "filter-btn active" : "filter-btn"}
+>
+  {label}
+</button>
       ))}
       <span>{activeCount}件未完了</span>
     </div>
