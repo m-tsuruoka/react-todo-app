@@ -8,6 +8,8 @@ export const useTodos = () => {
   });
   const [inputText, setInputText] = useState("");
   const [filter, setFilter] = useState("all");
+  const [editingId, setEditingId] = useState(null);
+  const [editingText, setEditingText] = useState("");
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -25,6 +27,11 @@ export const useTodos = () => {
     setTodos([...todos, newTodo]);
     setInputText("");
   };
+
+  //編集
+  const editTodo = (id) => {
+    
+  }
 
   // 削除関数
   const deleteTodo = (id) => {
@@ -63,6 +70,7 @@ export const useTodos = () => {
     filteredTodos,
     activeCount,
     addTodo,
+    editTodo,
     deleteTodo,
     toggleTodo,
   };

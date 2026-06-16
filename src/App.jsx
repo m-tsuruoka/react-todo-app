@@ -13,7 +13,8 @@ function App() {
     activeCount,
     filteredTodos,
     toggleTodo,
-    deleteTodo
+    deleteTodo,
+    editTodo
   } = useTodos();
 
   return (
@@ -32,6 +33,7 @@ function App() {
       <TodoList
         todos={filteredTodos}
         onToggle={toggleTodo}
+        onEdit={editTodo}
         onDelete={deleteTodo}
       />
     </div>
