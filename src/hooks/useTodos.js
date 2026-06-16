@@ -1,10 +1,17 @@
 // src/hooks/useTodos.js
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const useTodos = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
   const [inputText, setInputText] = useState("");
   const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos])
 
   // 追加関数
   const addTodo = () => {
