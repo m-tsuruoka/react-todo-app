@@ -6,7 +6,7 @@ function App() {
   const [todos,setTodos] = useState([])
   const [inputText, setInputText] = useState("")
 
-  // 追加関数（自分で実装）
+  // 追加関数
   const addTodo = () => {
     if(inputText.trim() === "")return;
 
@@ -18,6 +18,12 @@ function App() {
     setTodos([...todos, newTodo])
     setInputText("")
   }
+  
+  // 削除関数
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  
 
   return (
     <div className="app">
@@ -27,7 +33,7 @@ function App() {
         onInputChange={setInputText}
         onAddTodo={addTodo}
       />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={deleteTodo}/>
     </div>
   );
 }
