@@ -1,6 +1,5 @@
 function AddTodoForm({ inputText, onInputChange, onAddTodo }) {
   
-  // 💡 フォーム送信時の処理（先ほどの e.preventDefault() をここで使う！）
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddTodo(); 
@@ -13,6 +12,7 @@ function AddTodoForm({ inputText, onInputChange, onAddTodo }) {
         value={inputText}              // 親から届いた入力テキスト
         onChange={(e) => onInputChange(e.target.value)} // 💡 自分で実装の部分：親のStateを更新する
         placeholder="Todoを入力..."
+        required
       />
       <button className="form-btn" type="submit">追加</button>
       <p></p>

@@ -5,15 +5,21 @@ import FilterBar from "./components/FilterBar";
 
 function App() {
   const {
-    inputText,
-    setInputText,
-    addTodo,
-    filter,
-    setFilter,
-    activeCount,
-    filteredTodos,
-    toggleTodo,
-    deleteTodo
+  inputText,
+  setInputText,
+  filter,
+  setFilter,
+  filteredTodos,
+  activeCount,
+  addTodo,
+  editTodo,
+  deleteTodo,
+  toggleTodo,
+  cancelEdit,
+  editingId,
+  editingText,
+  setEditingText,
+  startEdit,
   } = useTodos();
 
   return (
@@ -29,11 +35,17 @@ function App() {
         onFilterChange={setFilter}
         activeCount={activeCount}
       />
-      <TodoList
-        todos={filteredTodos}
-        onToggle={toggleTodo}
-        onDelete={deleteTodo}
-      />
+ <TodoList
+  todos={filteredTodos}
+  onToggle={toggleTodo}
+  onDelete={deleteTodo}
+  onEdit={startEdit}
+  editingId={editingId}
+  editingText={editingText}
+  onEditingTextChange={setEditingText}
+  onSave={editTodo}
+  onCancel={cancelEdit}
+/>
     </div>
   );
 }
