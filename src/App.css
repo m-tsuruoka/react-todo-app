@@ -20,6 +20,27 @@
   border-radius: 4px;
 }
 
+.edit-input {
+  padding: 2px;
+  border-color: orange;
+}
+
+.save-btn {
+  padding: 2px;
+  background-color: rgb(74, 172, 74);
+  color: white;
+  border: none;
+  border-radius: 4px; 
+}
+
+.cancel-btn {
+  padding: 2px;
+  background-color: rgb(252, 77, 77);
+  color: white;
+  border: none;
+  border-radius: 4px; 
+}
+
 .delete-btn{
   background-color: red;
   color: white;

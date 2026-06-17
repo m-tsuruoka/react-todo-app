@@ -4,12 +4,13 @@ function TodoItem({ todo, onToggle, onDelete, onEdit, isEditing, editingText, on
     return (
       <li className="todo-item">
         <input 
+        className="edit-input"
           type="text" 
           value={editingText} 
           onChange={(e) => onEditingTextChange(e.target.value)} 
         />
-        <button onClick={() => onSave(todo.id)}>保存</button>
-        <button onClick={onCancel}>キャンセル</button>
+        <button className="save-btn" onClick={() => onSave(todo.id)}>保存</button>
+        <button className="cancel-btn" onClick={onCancel}>キャンセル</button>
       </li>
     );
   }else{
@@ -21,7 +22,7 @@ function TodoItem({ todo, onToggle, onDelete, onEdit, isEditing, editingText, on
         onChange={() => onToggle(todo.id)}
       />
       <span className={todo.completed ? "todo-text completed" : "todo-text"}>{todo.text}</span>
-      <button className="edit-btn" onClick={() => onEdit(todo.id, todo.text) }>編集</button>
+      <button className="edit-btn" onClick={() => { console.log("編集クリック", todo); onEdit(todo); }}>編集</button>
       <button className="delete-btn" onClick={() => onDelete(todo.id)}>削除</button>
     </li>
   );

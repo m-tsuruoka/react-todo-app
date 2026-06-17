@@ -10,6 +10,14 @@ export const useTodos = () => {
   const [filter, setFilter] = useState("all");
   const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState("");
+  const startEdit = (todo) => {
+  setEditingId(todo.id);
+  setEditingText(todo.text);
+};
+const cancelEdit = () => {
+  setEditingId(null);
+  setEditingText("");
+};
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -29,9 +37,20 @@ export const useTodos = () => {
   };
 
   //編集
-  const editTodo = (id) => {
-    
-  }
+const editTodo = () => {
+  if (editingText.trim() === "") return;
+
+  setTodos(
+    todos.map((todo) =>
+      todo.id === editingId
+        ? { ...todo, text: editingText }
+        : todo
+    )
+  );
+
+  setEditingId(null);
+  setEditingText("");
+};
 
   // 削除関数
   const deleteTodo = (id) => {
@@ -60,18 +79,22 @@ export const useTodos = () => {
     );
   };
 
-  // 💡 あなたが書いてくれた最強の詰め合わせセットを外に返す！
-  return {
-    todos,
-    inputText,
-    setInputText,
-    filter,
-    setFilter,
-    filteredTodos,
-    activeCount,
-    addTodo,
-    editTodo,
-    deleteTodo,
-    toggleTodo,
-  };
+return {
+  todos,
+  inputText,
+  setInputText,
+  filter,
+  setFilter,
+  filteredTodos,
+  activeCount,
+  addTodo,
+  editTodo,
+  deleteTodo,
+  toggleTodo,
+  cancelEdit,
+  editingId,
+  editingText,
+  setEditingText,
+  startEdit,
+};
 };
